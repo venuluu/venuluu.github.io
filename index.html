@@ -1,99 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>K. Venumadhav | Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-    body{background:linear-gradient(120deg,#0f172a,#020617);color:#fff;line-height:1.6}
-    header{padding:40px;text-align:center}
-    header img{width:150px;height:150px;border-radius:50%;border:4px solid #38bdf8}
-    header h1{margin-top:15px;font-size:2.5rem}
-    header p{color:#38bdf8}
-    section{padding:50px 20px;max-width:1000px;margin:auto}
-    h2{text-align:center;margin-bottom:30px;color:#38bdf8}
-    .skills,.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-    .card{background:#0f172a;padding:20px;border-radius:15px;box-shadow:0 0 15px rgba(0,0,0,0.4);text-align:center;transition:0.3s}
-    .card:hover{transform:translateY(-8px)}
-    .contact{text-align:center}
-    .contact p{margin:10px 0}
-    footer{text-align:center;padding:20px;color:#94a3b8}
-    button{margin-top:20px;padding:12px 25px;border:none;border-radius:30px;background:#38bdf8;color:#000;font-weight:600;cursor:pointer}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>K. Venumadhav | Software Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+  background:linear-gradient(120deg,#0f172a,#020617);
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  padding:25px 15px;
+  text-align:center;
+}
+header img{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:3px solid #38bdf8;
+}
+header h1{margin-top:10px;font-size:2rem}
+header p{color:#38bdf8;font-size:0.95rem}
+
+/* SECTIONS */
+section{
+  padding:35px 15px;
+  max-width:1000px;
+  margin:auto;
+}
+h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#38bdf8;
+  font-size:1.6rem;
+}
+
+/* GRID */
+.skills,.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+/* CARDS */
+.card{
+  background:#0f172a;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.4);
+  text-align:center;
+  transition:0.3s;
+}
+.card:hover{transform:translateY(-5px)}
+
+.card a{
+  display:inline-block;
+  margin:6px 5px 0;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:0.85rem;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.github{background:#38bdf8;color:#000;}
+.live{background:#22c55e;color:#000;}
+
+.contact{text-align:center;font-size:0.95rem}
+footer{text-align:center;padding:15px;color:#94a3b8;font-size:0.85rem}
+</style>
 </head>
+
 <body>
 
 <header>
   <img src="pfpvenu.jpeg" alt="profile">
   <h1>K. Venumadhav</h1>
-  <p>student</p>
-  <button onclick="downloadResume()">Download Resume</button>
+  <p>Software Developer</p>
 </header>
 
 <section>
-  <h2>About Me</h2>
-  <p style="text-align:center;max-width:700px;margin:auto;">
-good developer with constant learning and improving step by step with the emerging trends and creative ideas.
-  </p>
+<h2>About Me</h2>
+<p style="text-align:center;max-width:650px;margin:auto;">
+Passionate developer focused on continuous learning, building real-world projects,
+and exploring new technologies.
+</p>
 </section>
 
 <section>
-  <h2>Technical Skills</h2>
-  <div class="skills">
-    <div class="card">C</div>
-    <div class="card">Java</div>
-    <div class="card">Python</div>
-    <div class="card">HTML</div>
-    <div class="card">CSS</div>
-    <div class="card">JavaScript</div>
-    <div class="card">DBMS</div>
-    <div class="card">Cyber Security</div>
-    <div class="card">Android Programming</div>
-  </div>
+<h2>Technical Skills</h2>
+<div class="skills">
+<div class="card">C</div>
+<div class="card">Java</div>
+<div class="card">Python</div>
+<div class="card">HTML</div>
+<div class="card">CSS</div>
+<div class="card">JavaScript</div>
+<div class="card">DBMS</div>
+<div class="card">Cyber Security</div>
+<div class="card">Android</div>
+</div>
 </section>
 
 <section>
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="card">
-      <h3>Project 1</h3>
-      <p>Add your project description here.</p>
-    </div>
-    <div class="card">
-      <h3>Project 2</h3>
-      <p>Add your project description here.</p>
-    </div>
-    <div class="card">
-      <h3>Project 3</h3>
-      <p>Add your project description here.</p>
-    </div>
-  </div>
+<h2>Projects</h2>
+<div class="projects">
+
+<div class="card">
+<h3>Todo List</h3>
+<p>Task management web app with local storage.</p>
+<a href="#" class="github" target="_blank">GitHub</a>
+<a href="#" class="live" target="_blank">Live</a>
+</div>
+
+<div class="card">
+<h3>Data Maintenance</h3>
+<p>Database system for managing records in table form.</p>
+<a href="#" class="github" target="_blank">GitHub</a>
+<a href="#" class="live" target="_blank">Live</a>
+</div>
+
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>Personal responsive developer portfolio.</p>
+<a href="#" class="github" target="_blank">GitHub</a>
+<a  class="live" href="vscode\imagesliding.html" target="_blank" >Live</a>
+</div>
+
+</div>
 </section>
 
 <section>
-  <h2>Education</h2>
-  <p style="text-align:center;">Bachelor’s Degree in Computer Science (Add your college)</p>
+<h2>Education</h2>
+<p style="text-align:center;">Diploma in Computer Engineering</p>
 </section>
 
 <section class="contact">
-  <h2>Contact</h2>
-  <p>📞 8522075950</p>
-  <p>📧 venuluu@example.com</p>
-  <p>💻 github.com/venuluu</p>
-  <!-- <p>🔗 linkedin.com/in/yourprofile</p> -->
+<h2>Contact</h2>
+<p>📞 8522075950</p>
+<p>📧 venuluu@example.com</p>
+<p>💻 github.com/venuluu</p>
 </section>
 
 <footer>
-  <p>© 2026 K. Venumadhav | computer student</p>
+<p>© 2026 K. Venumadhav | Software Developer</p>
 </footer>
-
-<script>
-  function downloadResume(){
-    alert("Add your resume link here");
-  }
-</script>
 
 </body>
 </html>
