@@ -1,0 +1,55 @@
+<html>
+    <head></head>
+    <body>
+        <input id="in" placeholder="enter todolist item">
+        <button onclick="fun1()" >submit</button>
+        <button id="counter">counter</button>
+        <ui id="ul"></ui>
+        <script>
+             todolist=[]
+             var todo= document.getElementById("in").value;
+           todolist.push(todo)
+           
+             function fun1(){
+             
+           
+           
+           window.localStorage.setItem("todolist1",JSON.stringify(todolist))
+           
+           gentodolist()
+        if(window.localStorage){
+            todolist=JSON.parse(window.localStorage.getItem("todolist1"))
+            gentodolist()
+           }
+           document.getElementById("counter").innerHTML=todolist.length;
+           
+           
+             }
+           function gentodolist(){
+             document.getElementById("ul").innerHTML=""
+            
+            todolist.forEach(todos => {
+            var nli=document.createElement("li");
+            nli.innerText=todos
+            document.getElementById("ul").appendChild(nli)
+            var btn=document.createElement("button")
+            btn.innerHTML="delete"
+              document.getElementById("ul").appendChild(btn)
+            btn.addEventListener("click",function fun4(val){
+                // alert(val.target.parentElement.value)
+                // var g=val.target.parentElement.innerHTML
+               window.localStorage.removeItem("todolist1",(val.target.parentElement.value))
+               todolist.pop(val.target.parentElement.value)
+            //    window.localStorage.setItem("todolist1",JSON.stringify(todolist))
+               
+            //    pop(todolist[val.target.parentElement.innerHTML])
+            btn.style.display="none"
+            fun1()
+            })
+          
+            });
+           
+           }
+        </script>
+    </body>
+</html>
