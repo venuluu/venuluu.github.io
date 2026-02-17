@@ -4,23 +4,25 @@
         <input id="in" placeholder="enter todolist item">
         <button onclick="fun1()" >submit</button>
         <button id="counter">counter</button>
+        <input id="in1" placeholder="enter  delete data">
+        <button id="sdel" onclick="fun3()">search delete</button>
         <ui id="ul"></ui>
         <script>
              todolist=[]
+            //  window.localStorage.setItem("todolist1",JSON.stringify(todolist))
+             if(window.localStorage.getItem("todolist1")){
+            todolist=JSON.parse(window.localStorage.getItem("todolist1"))
+            gentodolist()
+           }
+             function fun1(){
+                
              var todo= document.getElementById("in").value;
            todolist.push(todo)
-           
-             function fun1(){
-             
-           
            
            window.localStorage.setItem("todolist1",JSON.stringify(todolist))
            
            gentodolist()
-        if(window.localStorage){
-            todolist=JSON.parse(window.localStorage.getItem("todolist1"))
-            gentodolist()
-           }
+        
            document.getElementById("counter").innerHTML=todolist.length;
            
            
@@ -44,11 +46,14 @@
                
             //    pop(todolist[val.target.parentElement.innerHTML])
             btn.style.display="none"
-            fun1()
+            //  fun1()
             })
           
             });
            
+            // function fun3(){
+            //    window.localStorage.removeItem("todolist1",( document.getElementById("in1").value))
+            // }
            }
         </script>
     </body>
