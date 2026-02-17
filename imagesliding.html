@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            img{
+                height: 200px;
+                
+            }
+            button{
+                margin-top: 10px;
+                margin-left: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="" id="img"><br>
+        <button id="p" onclick="fun2()">previous</button>
+        <button id="n" onclick="fun1()">next</button>
+
+        <script>
+            var arr=["naruto-shippuden-pain-rinnegan-power-desktop-wallpaper.jpg","venu with gays.jpeg","wp9354011-eren-yeager-pc-wallpapers.jpg"]
+            var i=0
+            document.getElementById("img").src=arr[i];
+            function fun1(){
+                i++
+                i=i%arr.length;
+                document.getElementById("img").src=arr[i];
+            }
+            function fun2(){
+                i--
+                if(i<0){
+                    i=arr.length-1
+                }
+                 document.getElementById("img").src=arr[i];
+            }
+        </script>
+
+    </body>
+</html>
