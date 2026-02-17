@@ -9,7 +9,7 @@
         <ui id="ul"></ui>
         <script>
              todolist=[]
-            //  window.localStorage.setItem("todolist1",JSON.stringify(todolist))
+            //   window.localStorage.setItem("todolist1",JSON.stringify(todolist))
              if(window.localStorage.getItem("todolist1")){
             todolist=JSON.parse(window.localStorage.getItem("todolist1"))
             gentodolist()
@@ -45,14 +45,15 @@
             //    window.localStorage.setItem("todolist1",JSON.stringify(todolist))
                
             //    pop(todolist[val.target.parentElement.innerHTML])
-            btn.style.display="none"
+            // btn.style.display="none"
+            document.getElementById("ul").removeChild(btn)
             //  fun1()
             })
           
             });
            
-            // function fun3(){
-            //    window.localStorage.removeItem("todolist1",( document.getElementById("in1").value))
+            //  function fun3(){
+            //   window.localStorage.removeItem( todolist1(document.getElementById("in1").value))
             // }
            }
         </script>
