@@ -1,0 +1,27 @@
+<html >
+<head></head>
+<body>
+    <h1 id="co"></h1>
+    <button onclick="plus()">plus</button>
+    <button onclick="minus()">minus</button>
+<script>
+     document.getElementById("co").innerText="counter"+window.localStorage.getItem("counter1");
+    var i=0;
+    if(window.localStorage.getItem("counter1")){
+         counter=window.localStorage.getItem("counter1")
+         i=window.localStorage.getItem("counter1")
+    }
+    window.localStorage.setItem("counter1",i)
+    function plus(){  
+        i++
+        window.localStorage.setItem("counter1",i)
+         document.getElementById("co").innerText="counter"+i;
+    }
+    function minus(){
+        i--
+        window.localStorage.setItem("counter1",i)
+         document.getElementById("co").innerText="counter"+i;
+    }
+</script>
+</body>
+</html>
