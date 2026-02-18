@@ -1,61 +1,72 @@
 <html>
-    <head></head>
+    <head><style>
+        #counter{
+            background-color: aquamarine;
+            color: black;
+            width: 200px;
+        }
+        </style>
+    </head>
     <body>
-        <input id="in" placeholder="enter todolist item">
-        <button onclick="fun1()" >submit</button>
-        <button id="counter">counter</button>
-        <input id="in1" placeholder="enter  delete data">
-        <button id="sdel" onclick="fun3()">search delete</button>
+        <input id="in" >
+        <button onclick="fun1()" id="sub">submit</button>
+        <button id="counter">local storage</button>
+        <!-- <input id="in1" placeholder="enter  delete data">
+        <button id="sdel" onclick="fun3()">search delete</button> -->
         <ui id="ul"></ui>
         <script>
-             todolist=[]
-            //   window.localStorage.setItem("todolist1",JSON.stringify(todolist))
-             if(window.localStorage.getItem("todolist1")){
-            todolist=JSON.parse(window.localStorage.getItem("todolist1"))
+
+            var g=document.getElementById("in").value
+             if(g==""){ document.getElementById("sub").style.display="none";
+            }
+              document.getElementById("in").addEventListener("keyup",function(keydown){ 
+                var g=document.getElementById("in").value
+                if(g==""){ document.getElementById("sub").style.display="none";
+            }else{
+                    document.getElementById("sub").style.display="inline";}
+        
+              })
+                
+            todolist=[]
+            todolist=JSON.parse(window.localStorage.getItem("todolistmain"))
+            if(window.localStorage.getItem("todolistmain")){
             gentodolist()
            }
-             function fun1(){
-                
-             var todo= document.getElementById("in").value;
+
+        function fun1(){    
+           var todo= document.getElementById("in").value;
            todolist.push(todo)
-           
-           window.localStorage.setItem("todolist1",JSON.stringify(todolist))
-           
-           gentodolist()
-        
+           window.localStorage.setItem("todolistmain",JSON.stringify(todolist))
+           gentodolist() 
            document.getElementById("counter").innerHTML=todolist.length;
-           
-           
              }
-           function gentodolist(){
-             document.getElementById("ul").innerHTML=""
-            
-            todolist.forEach(todos => {
+         function gentodolist(){
+            document.getElementById("ul").innerHTML=""
+            for(let i=0;i<=todolist.length-1;i++){
             var nli=document.createElement("li");
-            nli.innerText=todos
+            nli.innerText=todolist[i]
             document.getElementById("ul").appendChild(nli)
             var btn=document.createElement("button")
             btn.innerHTML="delete"
-              document.getElementById("ul").appendChild(btn)
-            btn.addEventListener("click",function fun4(val){
-                // alert(val.target.parentElement.value)
-                // var g=val.target.parentElement.innerHTML
-               window.localStorage.removeItem("todolist1",(val.target.parentElement.value))
-               todolist.pop(val.target.parentElement.value)
-            //    window.localStorage.setItem("todolist1",JSON.stringify(todolist))
-               
-            //    pop(todolist[val.target.parentElement.innerHTML])
-            // btn.style.display="none"
-            document.getElementById("ul").removeChild(btn)
-            //  fun1()
-            })
-          
-            });
+            document.getElementById("ul").appendChild(btn)
            
-            //  function fun3(){
-            //   window.localStorage.removeItem( todolist1(document.getElementById("in1").value))
-            // }
+             btn.addEventListener("click",function fun4(val){
+            //  todolist11=todolist.copy()   
+             todolist.splice(i,1)
+             window.localStorage.setItem("todolistmain",JSON.stringify(todolist))
+             gentodolist()
+            })
            }
+            if(window.localStorage.getItem("todolistmain"))
+            {
+            document.getElementById("counter").innerHTML=todolist.length;
+            }
+            else{
+                document.getElementById("counter").innerText="local storage is zero"
+            }
+        
+        }
+           
         </script>
     </body>
 </html>
